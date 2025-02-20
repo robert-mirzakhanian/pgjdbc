@@ -13,6 +13,7 @@ import org.postgresql.jdbc.AutoSave;
 import org.postgresql.jdbc.BatchResultHandler;
 import org.postgresql.jdbc.EscapeSyntaxCallMode;
 import org.postgresql.jdbc.PreferQueryMode;
+import org.postgresql.util.ConnectionSpec;
 import org.postgresql.util.HostSpec;
 
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -626,4 +627,11 @@ public interface QueryExecutor extends TypeTransferModeRegistry {
    *                      Portal class.
    */
   void removeQueryFromAdaptiveFetchCache(boolean adaptiveFetch, ResultCursor cursor);
+
+  /**
+   * Get connection spec inside QueryExecutor.
+   *
+   * @return connection spec
+   */
+  ConnectionSpec getConnectionSpec();
 }

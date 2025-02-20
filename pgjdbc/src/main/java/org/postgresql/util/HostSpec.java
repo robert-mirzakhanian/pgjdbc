@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 /**
  * Simple container for host and port.
  */
-public class HostSpec {
+public class HostSpec implements InetAddressConnectionSpec {
   public static final String DEFAULT_NON_PROXY_HOSTS = "localhost|127.*|[::1]|0.0.0.0|[::0]";
 
   protected final @Nullable String localSocketAddress;

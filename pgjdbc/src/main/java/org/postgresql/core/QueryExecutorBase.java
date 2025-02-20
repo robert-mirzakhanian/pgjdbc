@@ -11,6 +11,7 @@ import org.postgresql.jdbc.AutoSave;
 import org.postgresql.jdbc.EscapeSyntaxCallMode;
 import org.postgresql.jdbc.PreferQueryMode;
 import org.postgresql.jdbc.ResourceLock;
+import org.postgresql.util.ConnectionSpec;
 import org.postgresql.util.HostSpec;
 import org.postgresql.util.LruCache;
 import org.postgresql.util.PSQLException;
@@ -471,6 +472,11 @@ public abstract class QueryExecutorBase implements QueryExecutor {
   @Override
   public final @Nullable String getParameterStatus(String parameterName) {
     return parameterStatuses.get(parameterName);
+  }
+
+  @Override
+  public ConnectionSpec getConnectionSpec() {
+    return pgStream.getHostSpec();
   }
 
   /**

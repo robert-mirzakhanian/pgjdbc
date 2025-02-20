@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  * to reduce heap usage in case the user abandons connection without closing it first.
  */
 public class QueryExecutorCloseAction implements Closeable {
-  private static final Logger LOGGER = Logger.getLogger(QueryExecutorBase.class.getName());
+  private static final Logger LOGGER = Logger.getLogger(QueryExecutorCloseAction.class.getName());
 
   @SuppressWarnings("RedundantCast")
   // Cast is needed for checkerframework to accept the code
